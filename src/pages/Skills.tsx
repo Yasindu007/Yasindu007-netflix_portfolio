@@ -3,7 +3,7 @@ import './Skills.css';
 import { getSkills } from '../queries/getSkills';
 
 import { FaReact, FaNodeJs, FaAws, FaDocker, FaJava, FaGitAlt } from 'react-icons/fa';
-import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiRabbitmq, SiImessage, SiHtml5, SiCss3, SiJavascript } from 'react-icons/si';
+import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiRabbitmq, SiImessage, SiHtml5, SiCss3, SiJavascript, SiJsonwebtokens as SiJwt, SiGo, SiJson,SiMongodb } from 'react-icons/si';
 import { Skill } from '../types';
  
 
@@ -29,6 +29,10 @@ const iconMap: { [key: string]: JSX.Element } = {
   'netlify': <SiNetlify />,
   'rabbitmq': <SiRabbitmq />,
   'imessage': <SiImessage />,
+  'jwt': <SiJwt />,
+  'go': <SiGo />,
+  'json': <SiJson />,
+  'mongodb': <SiMongodb />,
 };
 
 
