@@ -10,7 +10,6 @@ const techIcons: { [key: string]: JSX.Element } = {
   "ReactJS": <FaReact />,
   "NodeJS": <FaNodeJs />,
   "JavaScript": <SiJavascript />,
-  "Netlify": <SiNetlify />,
   "AWS": <FaAws />,
   "PostgreSQL": <SiPostgresql />,
   "MongoDB": <SiMongodb />,
@@ -60,7 +59,6 @@ const techIcons: { [key: string]: JSX.Element } = {
   'Bootstrap': <SiCss3 />,
   'JQuery': <SiJquery />,
   'Mongoose': <SiMongodb />,
-  'JavaScript': <SiJavascript />,
   'Tkinter': <FaPython />,
   'XML': <FaCode />,
 };
