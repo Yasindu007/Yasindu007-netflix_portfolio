@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Projects.css';
 import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs, FaCode } from 'react-icons/fa';
-import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo, SiJavascript } from 'react-icons/si';
+import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo, SiJavascript , SiNetlify} from 'react-icons/si';
 import { Project } from '../types';
 import { getProjects } from '../queries/getProjects';
 import { GrDeploy, GrKubernetes } from "react-icons/gr";
@@ -9,6 +9,8 @@ import { GrDeploy, GrKubernetes } from "react-icons/gr";
 const techIcons: { [key: string]: JSX.Element } = {
   "ReactJS": <FaReact />,
   "NodeJS": <FaNodeJs />,
+  "JavaScript": <SiJavascript />,
+  "Netlify": <SiNetlify />,
   "AWS": <FaAws />,
   "PostgreSQL": <SiPostgresql />,
   "MongoDB": <SiMongodb />,
