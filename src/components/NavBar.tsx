@@ -10,7 +10,19 @@ const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [currentProfile, setCurrentProfile] = useState<string | null>(null);
   const profileImage = location.state?.profileImage || blueImage;
+
+  useEffect(() => {
+    // If we are on a profile page, capture the profile name
+    const match = location.pathname.match(/\/profile\/([^/]+)/);
+    if (match && match[1]) {
+      setCurrentProfile(match[1]);
+    } else if (location.pathname === '/browse' || location.pathname === '/') {
+      // If we navigate back to the browse page or splash, reset the profile
+      setCurrentProfile(null);
+    }
+  }, [location.pathname]);
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 80);
@@ -29,15 +41,17 @@ const Navbar: React.FC = () => {
     setIsSidebarOpen(false);
   };
 
+  const homePath = currentProfile ? `/profile/${currentProfile}` : '/browse';
+
   return (
     <>
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-left">
-          <Link to="/" className="navbar-logo">
+          <Link to={homePath} className="navbar-logo">
             <img src={netflixLogo} alt="Netflix" />
           </Link>
           <ul className="navbar-links">
-            <li><Link to="/browse">Home</Link></li>
+            <li><Link to={homePath}>Home</Link></li>
             <li><Link to="/work-experience">Professional</Link></li>
             <li><Link to="/skills">Skills</Link></li>
             <li><Link to="/projects">Projects</Link></li>
@@ -64,7 +78,7 @@ const Navbar: React.FC = () => {
           <img src={netflixLogo} alt="Netflix Logo" />
         </div>
         <ul>
-          <li><Link to="/browse" onClick={closeSidebar}><FaHome /> Home</Link></li>
+          <li><Link to={homePath} onClick={closeSidebar}><FaHome /> Home</Link></li>
           <li><Link to="/work-experience" onClick={closeSidebar}><FaBriefcase /> Professional</Link></li>
           <li><Link to="/skills" onClick={closeSidebar}><FaTools /> Skills</Link></li>
           <li><Link to="/projects" onClick={closeSidebar}><FaProjectDiagram /> Projects</Link></li>
