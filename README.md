@@ -92,6 +92,38 @@ The beauty of this project is that almost all customization happens in DatoCMS, 
     *   `src/profilePage/ContinueWatching.tsx`
     *   `src/pages/Browse.tsx`
 
+## 🚀 Deployment
+
+This project is ready to be deployed on platforms like Netlify or Vercel.
+
+### Deploying to Vercel
+
+1.  Push your code to a GitHub, GitLab, or Bitbucket repository.
+2.  Go to Vercel and sign up using your Git provider.
+3.  Click "Add New..." → "Project".
+4.  Import your portfolio repository.
+5.  Vercel will automatically detect that it's a Create React App and configure the build settings for you.
+6.  Before deploying, go to the "Environment Variables" section.
+7.  Add your DatoCMS API token:
+    *   **Key**: `REACT_APP_DATOCMS_API_TOKEN`
+    *   **Value**: *Your actual DatoCMS API token*
+8.  Click "Deploy". Your portfolio will be live in minutes!
+
+### Deploying to Netlify
+
+1.  Push your code to a GitHub, GitLab, or Bitbucket repository.
+2.  Go to Netlify and sign up using your Git provider.
+3.  Click "Add new site" → "Import an existing project".
+4.  Select your portfolio repository.
+5.  Netlify will detect it's a Create React App. Confirm the following settings:
+    *   **Build command**: `npm run build` (or `yarn build`)
+    *   **Publish directory**: `build`
+6.  Click "Show advanced" → "Add environment variables".
+7.  Add your DatoCMS API token:
+    *   **Key**: `REACT_APP_DATOCMS_API_TOKEN`
+    *   **Value**: *Your actual DatoCMS API token*
+8.  Click "Deploy site".
+
 ## ⭐ Show Your Support
 
 If you find this project helpful or inspiring, please give it a ⭐ on GitHub! It helps and is much appreciated.
