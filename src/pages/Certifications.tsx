@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './Certifications.css';
 import { FaExternalLinkAlt, FaUniversity } from 'react-icons/fa';
-import { SiUdemy, SiCoursera, SiIeee } from 'react-icons/si';
+import { SiUdemy, SiCoursera, SiIeee, SiLinkedin } from 'react-icons/si';
 import { Certification } from '../types';
 import { getCertifications } from '../queries/getCertifications';
 const iconData: { [key: string]: JSX.Element } = {
   'udemy': <SiUdemy />,
   'coursera': <SiCoursera />,
   'ieee': <SiIeee />,
-  'university': <FaUniversity />
+  'university': <FaUniversity />,
+  'linkedin': <SiLinkedin />
 }
+
 
 const Certifications: React.FC = () => {
 
@@ -48,3 +50,5 @@ const Certifications: React.FC = () => {
 };
 
 export default Certifications;
+
+

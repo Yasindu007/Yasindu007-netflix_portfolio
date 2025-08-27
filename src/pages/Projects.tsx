@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Projects.css';
-import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs } from 'react-icons/fa';
-import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaAws, FaDatabase, FaDocker, FaAngular, FaGithub, FaGitlab, FaGoogle, FaJava, FaJenkins, FaMicrosoft, FaPython, FaVuejs, FaCode } from 'react-icons/fa';
+import { SiRubyonrails, SiPostgresql, SiMongodb, SiMaterialdesign, SiHtml5, SiCss3, SiJquery, SiAwsamplify, SiFirebase, SiTerraform, SiArgo, SiJavascript } from 'react-icons/si';
 import { Project } from '../types';
 import { getProjects } from '../queries/getProjects';
 import { GrDeploy, GrKubernetes } from "react-icons/gr";
@@ -57,6 +57,10 @@ const techIcons: { [key: string]: JSX.Element } = {
   'Tailwind CSS': <SiCss3 />,
   'Bootstrap': <SiCss3 />,
   'JQuery': <SiJquery />,
+  'Mongoose': <SiMongodb />,
+  'JavaScript': <SiJavascript />,
+  'Tkinter': <FaPython />,
+  'XML': <FaCode />,
 };
 
 
@@ -86,7 +90,7 @@ const Projects: React.FC = () => {
             <img src={project.image.url} alt={project.title} className="project-image" />
             <div className="project-details">
               <h3>{project.title}</h3>
-              <p>{project.description}</p>
+              <p>{((project.description as any)?.value)?.document?.children?.[0]?.children?.[0]?.value || 'No description available.'}</p>
               <div className="tech-used">
                 {project.techUsed.split(', ').map((tech, i) => (
                   <span key={i} className="tech-badge">

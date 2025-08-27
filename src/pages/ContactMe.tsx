@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './ContactMe.css';
-import profilePic from '../images/sumanth.jpeg';
 import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
 import { getContactMe } from '../queries/getContactMe';
@@ -20,16 +19,18 @@ const ContactMe: React.FC = () => {
 
   if (!userData) return <div>Loading...</div>;
 
+  // Safely access the nested summary text from the structured text object
+  const summaryText =
+    (userData.summary as any)?.value?.document?.children?.[0]?.children?.[0]?.value || '';
+
   return (
     <div className="contact-container">
       <div className="linkedin-badge-custom">
-        <img src={profilePic} alt="Sumanth Samala" className="badge-avatar" />
+        <img src={userData.profilePicture.url} alt={userData.name} className="badge-avatar" />
         <div className="badge-content">
           <h3 className="badge-name">{userData?.name}</h3>
           <p className="badge-title">{userData.title}</p>
-          <p className="badge-description">
-            {userData.summary}
-          </p>
+          <p className="badge-description">{summaryText}</p>
           <p className="badge-company">{userData.companyUniversity}</p>
           <a
             href={userData.linkedinLink}

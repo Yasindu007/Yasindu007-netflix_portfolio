@@ -6,7 +6,9 @@ const GET_PROJECTS = `
   query {
     allProjects(orderBy: title_ASC) {
       title
-      description
+      description {
+        value
+      }
       techUsed
       image {
         url

@@ -2,28 +2,33 @@ import React, { useEffect, useState } from 'react';
 import './Skills.css';
 import { getSkills } from '../queries/getSkills';
 
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaGitAlt, FaJava } from 'react-icons/fa';
-import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiHtml5, SiCss3, SiRabbitmq, SiImessage } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaAws, FaDocker, FaJava, FaGitAlt } from 'react-icons/fa';
+import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiRabbitmq, SiImessage, SiHtml5, SiCss3, SiJavascript } from 'react-icons/si';
 import { Skill } from '../types';
+ 
 
 const iconMap: { [key: string]: JSX.Element } = {
-  SiRubyonrails: <SiRubyonrails />,
-  FaNodeJs: <FaNodeJs />,
-  SiSpringboot: <SiSpringboot />,
-  FaJava: <FaJava />,
-  SiPhp: <SiPhp />,
-  FaReact: <FaReact />,
-  SiTypescript: <SiTypescript />,
-  FaAws: <FaAws />,
-  FaDocker: <FaDocker />,
-  SiPostgresql: <SiPostgresql />,
-  SiMysql: <SiMysql />,
-  SiKubernetes: <SiKubernetes />,
-  SiGooglecloud: <SiGooglecloud />,
-  SiHeroku: <SiHeroku />,
-  SiNetlify: <SiNetlify />,
-  SiRabbitmq: <SiRabbitmq />,
-  SiImessage: <SiImessage />,
+  'ruby on rails': <SiRubyonrails />,
+  'git': <FaGitAlt />,
+  'html5': <SiHtml5 />,
+  'css3': <SiCss3 />,
+  'javascript': <SiJavascript />,
+  'node.js': <FaNodeJs />,
+  'springboot': <SiSpringboot />,
+  'java': <FaJava />,
+  'php': <SiPhp />,
+  'react': <FaReact />,
+  'typescript': <SiTypescript />,
+  'aws': <FaAws />,
+  'docker': <FaDocker />,
+  'postgresql': <SiPostgresql />,
+  'mysql': <SiMysql />,
+  'kubernetes': <SiKubernetes />,
+  'google cloud': <SiGooglecloud />,
+  'heroku': <SiHeroku />,
+  'netlify': <SiNetlify />,
+  'rabbitmq': <SiRabbitmq />,
+  'imessage': <SiImessage />,
 };
 
 
@@ -65,7 +70,7 @@ const Skills: React.FC = () => {
                     </span>
                   ))}
                 </h3>
-                <p className="skill-description">{skill.description}</p>
+                <p className="skill-description">{((skill.description as any)?.value)?.document?.children?.[0]?.children?.[0]?.value || 'No description available.'}</p>
               </div>
             ))}
           </div>

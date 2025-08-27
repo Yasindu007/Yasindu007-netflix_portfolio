@@ -4,13 +4,15 @@ import { ContactMe } from '../types';
 
 const GET_CONTACT_ME = `
   query {
-    contactMe {
+    contactme {
       profilePicture {
         url
       }
       name
       title
-      summary
+      summary {
+        value
+      }
       companyUniversity
       linkedinLink
       email
@@ -20,6 +22,6 @@ const GET_CONTACT_ME = `
 `;
 
 export async function getContactMe(): Promise<ContactMe> {
-  const data = await datoCMSClient.request<{ contactMe: ContactMe }>(GET_CONTACT_ME);
-  return data.contactMe;
+  const data = await datoCMSClient.request<{ contactme: ContactMe }>(GET_CONTACT_ME);
+  return data.contactme;
 }

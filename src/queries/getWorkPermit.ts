@@ -1,19 +1,22 @@
 // queries/getWorkPermit.ts
-import datoCMSClient from './datoCMSClient';
-import { WorkPermit } from '../types';
+// import datoCMSClient from './datoCMSClient';
+// import { WorkPermit } from '../types';
 
-const GET_WORK_PERMIT = `
-  query {
-    workPermit {
-      visaStatus
-      expiryDate
-      summary
-      additionalInfo
-    }
-  }
-`;
+// const GET_WORK_PERMIT = `
+//   query {
+//     workPermit {
+//       visaStatus
+//       expiryDate
+//       summary
+//       additionalInfo
+//     }
+//   }
+// `;
 
-export async function getWorkPermit(): Promise<WorkPermit> {
-  const data = await datoCMSClient.request<{ workPermit: WorkPermit }>(GET_WORK_PERMIT);
-  return data.workPermit;
-}
+// export async function getWorkPermit(): Promise<WorkPermit> {
+//   const data = await datoCMSClient.request<{ workPermit: WorkPermit }>(GET_WORK_PERMIT);
+//   return data.workPermit;
+// }
+
+// This will prevent the "is considered a global script file" error.
+export {};

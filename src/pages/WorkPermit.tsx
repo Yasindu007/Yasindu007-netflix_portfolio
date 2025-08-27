@@ -1,31 +1,43 @@
-import React, { useEffect, useState } from 'react';
-import './WorkPermit.css';
-import { getWorkPermit } from '../queries/getWorkPermit';
-import { WorkPermit as IWorkPermit } from '../types';
-const WorkPermit: React.FC = () => {
+// import React, { useEffect, useState } from 'react';
+// import './WorkPermit.css';
+// import { getWorkPermit } from '../queries/getWorkPermit';
+// import { WorkPermit as WorkPermitType } from '../types';
 
-  const [workPermitData, setWorkPermitData] = useState<IWorkPermit | null>(null);
-  useEffect(() => {
-    async function fetchWorkPermitData() {
-      const data = await getWorkPermit();
-      setWorkPermitData(data);
-    }
-    fetchWorkPermitData();
-  }, []);
+// const WorkPermit: React.FC = () => {
+//   const [workPermit, setWorkPermit] = useState<WorkPermitType | null>(null);
+//   const [loading, setLoading] = useState(true);
 
-  if (!workPermitData) return <div>Loading...</div>;
+//   useEffect(() => {
+//     const fetchWorkPermit = async () => {
+//       try {
+//         const data = await getWorkPermit();
+//         setWorkPermit(data);
+//       } catch (error) {
+//         console.error('Error fetching work permit:', error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
 
-  return (
-    <div className="work-permit-container">
-      <div className="work-permit-card">
-        <h2 className="work-permit-headline">🎓 Work Permit</h2>
-        <p className="work-permit-summary">
-          I'm currently on a <strong>{workPermitData.visaStatus}</strong> 🛂, which allows me to work in the UK! 🇬🇧 My visa is valid until <strong>{new Date(workPermitData.expiryDate).toLocaleDateString()}</strong> 📅, giving me the opportunity to build valuable experience and grow my career here. 🌟
-        </p>
-        <p className="additional-info">{workPermitData.additionalInfo}</p>
-      </div>
-    </div>
-  );
-};
+//     fetchWorkPermit();
+//   }, []);
 
-export default WorkPermit;
+//   if (loading) {
+//     return <div>Loading...</div>;
+//   }
+
+//   return (
+//     <div className="work-permit-container">
+//       <h1>Work Permit Information</h1>
+//       <p><strong>Visa Status:</strong> {workPermit?.visaStatus}</p>
+//       <p><strong>Expiry Date:</strong> {workPermit?.expiryDate}</p>
+//       <p><strong>Summary:</strong> {workPermit?.summary}</p>
+//       <p><strong>Additional Info:</strong> {workPermit?.additionalInfo}</p>
+//     </div>
+//   );
+// };
+
+// export default WorkPermit;
+
+export {};
+

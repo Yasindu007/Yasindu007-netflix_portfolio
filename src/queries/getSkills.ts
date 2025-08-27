@@ -7,7 +7,9 @@ const GET_SKILLS = `
   allSkills(orderBy: category_ASC) {
     name
     category
-    description
+    description {
+      value
+    }
     icon
   }
 }

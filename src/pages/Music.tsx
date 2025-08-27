@@ -35,6 +35,9 @@ const Music: React.FC = () => {
           {favoriteAlbums.map((album, index) => (
             <div key={index} className="album-card" style={{ animationDelay: `${index * 0.3}s` }}>
               <img src={album.imgSrc} alt={album.title} className="album-image" />
+              // Example from your Projects.tsx
+              <img src={project.image.url} alt={project.title} />
+
               <div className="album-details">
                 <h4>{album.title}</h4>
                 <p>by {album.artist}</p>
