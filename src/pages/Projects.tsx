@@ -30,7 +30,6 @@ const techIcons: { [key: string]: JSX.Element } = {
   'GitLab': <FaGitlab />,
   'GitHub': <FaGithub />,
   'Heroku': <GrDeploy />,
-  'Netlify': <GrDeploy />,
   'Firebase': <SiFirebase />,
   'GCP': <FaGoogle />,
   'Azure': <FaMicrosoft />,
