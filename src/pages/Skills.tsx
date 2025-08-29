@@ -5,7 +5,7 @@ import { getSkills } from '../queries/getSkills';
 import { FaReact, FaNodeJs, FaAws, FaDocker, FaJava, FaGitAlt } from 'react-icons/fa';
 import { SiRubyonrails, SiTypescript, SiPostgresql, SiMysql, SiKubernetes, SiGooglecloud, SiSpringboot, SiPhp, SiNetlify, SiHeroku, SiRabbitmq, SiImessage, SiHtml5, SiCss3, SiJavascript, SiJsonwebtokens as SiJwt, SiGo, SiJson,SiMongodb, SiPython, SiExpress } from 'react-icons/si';
 import { Skill } from '../types';
- 
+
 
 const iconMap: { [key: string]: JSX.Element } = {
   'ruby on rails': <SiRubyonrails />,

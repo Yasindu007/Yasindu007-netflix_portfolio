@@ -1,9 +1,9 @@
 # Force HTTP → HTTPS for root and www
-http://malith.is-a.dev/*     https://malith.is-a.dev/:splat     301!
-http://www.malith.is-a.dev/* https://malith.is-a.dev/:splat     301!
+#http://malith.is-a.dev/*     https://malith.is-a.dev/:splat     301!
+#http://www.malith.is-a.dev/* https://malith.is-a.dev/:splat     301!
 
 # Redirect www → root
-https://www.malith.is-a.dev/* https://malith.is-a.dev/:splat     301!
+#https://www.malith.is-a.dev/* https://malith.is-a.dev/:splat     301!
 
 # SPA fallback for React routes
 /* /index.html 200

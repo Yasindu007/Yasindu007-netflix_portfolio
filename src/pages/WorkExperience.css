@@ -1,13 +1,40 @@
+/* Main timeline line */
+.vertical-timeline::before {
+  background: #555;
+}
+
+/* Card container */
 .vertical-timeline-element-content {
+  background: #333;
+  color: #fff;
+  border-radius: 0.25em;
+  box-shadow: 0 3px 0 #555;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .vertical-timeline-element-content:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* Arrow pointing to the timeline */
+.vertical-timeline-element-content .vertical-timeline-element-content-arrow {
+  border-right: 7px solid #333;
+}
 
+/* Icons */
+.vertical-timeline-element-icon {
+  background: #E50914;
+  color: #fff;
+  box-shadow: 0 0 0 4px #555, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Ensure text inside cards is readable on the dark background */
+.vertical-timeline-element-content h3,
+.vertical-timeline-element-content h4,
+.vertical-timeline-element-content p {
+  color: #fff;
+}
 .timeline-container {
   text-align: center;
   padding: 20px;

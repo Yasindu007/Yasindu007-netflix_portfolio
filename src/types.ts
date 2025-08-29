@@ -1,42 +1,6 @@
 // types.ts
 
-// export interface ProfileBanner {
-//   backgroundImage: { url: string };
-//   headline: string;
-//   resumeLink: {
-//     url: string;
-//   };
-  
-//   linkedinLink: string;
-//   profileSummary: string;
-// }
 
-
-// export interface WorkPermit {
-//   visaStatus: string;
-//   expiryDate: Date;
-//   summary: string;
-//   additionalInfo: string;
-// }
-// export interface ProfileBanner {
-//   headline: string;
-//   resumeLink: { url: string };   // ✅ remove the `string |` union
-//   linkedinLink: string;
-//   profileSummary: { value: string };
-// }
-// export interface ProfileBanner {
-//   headline: string;
-//   resumeLink: { url: string };
-//   linkedinLink: string;
-//   profileSummary: { value: string };
-// }
-// export interface ProfileBanner {
-//   backgroundImage: { url: string };
-//   headline: string;
-//   resumeLink: { url: string };
-//   linkedinLink: string;
-//   profileSummary: { value: string };
-// }
 export interface ProfileBanner {
   backgroundImage: { url: string };
   headline: string;
@@ -44,13 +8,8 @@ export interface ProfileBanner {
   linkedinLink: string;
   profileSummary: { value: string };
 }
-// export interface ImageAsset {
-//   url: string;
-//   title: string | null;
-//   alt: string | null;
-// }
 
-// (leave other interfaces below if you need them)
+
 
 
 export interface TimelineItem {
