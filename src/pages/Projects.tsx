@@ -9,6 +9,7 @@ import { GrDeploy, GrKubernetes } from "react-icons/gr";
 const techIcons: { [key: string]: JSX.Element } = {
   "ReactJS": <FaReact />,
   "NodeJS": <FaNodeJs />,
+  "Netlify": <SiNetlify />,
   "JavaScript": <SiJavascript />,
   "AWS": <FaAws />,
   "PostgreSQL": <SiPostgresql />,
