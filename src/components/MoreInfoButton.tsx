@@ -6,7 +6,7 @@ interface MoreInfoButtonProps {
   label?: string;
 }
 
-const MoreInfoButton: React.FC<MoreInfoButtonProps> = ({ onClick, label = "More Info" }) => {
+const MoreInfoButton: React.FC<MoreInfoButtonProps> = ({ onClick, label = 'More Info' }) => {
   return (
     <button className="more-info-button" onClick={onClick} type="button">
       <div className="icon-container">

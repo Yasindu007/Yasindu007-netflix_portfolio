@@ -9,7 +9,6 @@ import { getTimeline } from '../queries/getTimeline';
 import { FaCalendar, FaStar as StarIcon } from 'react-icons/fa';
 
 const WorkExperience: React.FC = () => {
-
   const [timeLineData, setTimeLineData] = useState<TimelineItem[] | null>(null);
 
   useEffect(() => {
@@ -19,7 +18,6 @@ const WorkExperience: React.FC = () => {
     }
     fetchTimelineItem();
   }, []);
-
 
   if (!timeLineData) return <div>Loading...</div>;
 
@@ -36,9 +34,9 @@ const WorkExperience: React.FC = () => {
             key={index}
             className={`vertical-timeline-element--${item.timelineType}`}
             date={item.dateRange}
-            icon={item.timelineType === "work" ? <WorkIcon /> : <SchoolIcon />}
+            icon={item.timelineType === 'work' ? <WorkIcon /> : <SchoolIcon />}
           >
-            {item.timelineType === "work" ? (
+            {item.timelineType === 'work' ? (
               <div>
                 <h3 className="vertical-timeline-element-title">{item.title}</h3>
                 <h4 className="vertical-timeline-element-subtitle">{item.name}</h4>
@@ -54,9 +52,7 @@ const WorkExperience: React.FC = () => {
             )}
           </VerticalTimelineElement>
         ))}
-        <VerticalTimelineElement
-          icon={<StarIcon />}
-        />
+        <VerticalTimelineElement icon={<StarIcon />} />
       </VerticalTimeline>
     </>
   );

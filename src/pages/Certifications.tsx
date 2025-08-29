@@ -5,19 +5,17 @@ import { SiUdemy, SiCoursera, SiIeee, SiLinkedin } from 'react-icons/si';
 import { Certification } from '../types';
 import { getCertifications } from '../queries/getCertifications';
 const iconData: { [key: string]: JSX.Element } = {
-  'udemy': <SiUdemy />,
-  'coursera': <SiCoursera />,
-  'ieee': <SiIeee />,
-  'university': <FaUniversity />,
-  'linkedin': <SiLinkedin />
-}
-
+  udemy: <SiUdemy />,
+  coursera: <SiCoursera />,
+  ieee: <SiIeee />,
+  university: <FaUniversity />,
+  linkedin: <SiLinkedin />,
+};
 
 const Certifications: React.FC = () => {
-
   const [certifications, setCertifications] = useState<Certification[]>([]);
 
-  useEffect(() => { 
+  useEffect(() => {
     async function fetchCertifications() {
       const data = await getCertifications();
       setCertifications(data);
@@ -32,9 +30,18 @@ const Certifications: React.FC = () => {
     <div className="certifications-container">
       <div className="certifications-grid">
         {certifications.map((cert, index) => (
-          <a href={cert.link} key={index} target="_blank" rel="noopener noreferrer" className="certification-card" style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}>
+          <a
+            href={cert.link}
+            key={index}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="certification-card"
+            style={{ '--delay': `${index * 0.2}s` } as React.CSSProperties}
+          >
             <div className="certification-content">
-              <div className="certification-icon">{iconData[cert.iconName] || <FaUniversity />}</div>
+              <div className="certification-icon">
+                {iconData[cert.iconName] || <FaUniversity />}
+              </div>
               <h3>{cert.title}</h3>
               <p>{cert.issuer}</p>
               {cert.issuedDate && <span className="issued-date">Issued {cert.issuedDate}</span>}
@@ -50,5 +57,3 @@ const Certifications: React.FC = () => {
 };
 
 export default Certifications;
-
-

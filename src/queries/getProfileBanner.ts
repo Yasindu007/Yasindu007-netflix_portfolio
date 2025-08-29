@@ -1,5 +1,5 @@
-import { ProfileBanner } from "../types";
-import datoCMSClient from "./datoCMSClient";  // 👈 default import
+import { ProfileBanner } from '../types';
+import datoCMSClient from './datoCMSClient';
 
 const GET_PROFILE_BANNER = `
   {
@@ -20,8 +20,6 @@ const GET_PROFILE_BANNER = `
 `;
 
 export async function getProfileBanner(): Promise<ProfileBanner> {
-  const data = await datoCMSClient.request<{ profilebanner: ProfileBanner }>(
-    GET_PROFILE_BANNER
-  );
+  const data = await datoCMSClient.request<{ profilebanner: ProfileBanner }>(GET_PROFILE_BANNER);
   return data.profilebanner;
 }

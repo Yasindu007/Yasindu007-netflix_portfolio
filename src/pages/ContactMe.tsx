@@ -5,8 +5,7 @@ import { ContactMe as IContactMe } from '../types';
 import { getContactMe } from '../queries/getContactMe';
 
 const ContactMe: React.FC = () => {
-
-  const [userData, setUserData] = useState<IContactMe>()
+  const [userData, setUserData] = useState<IContactMe>();
 
   useEffect(() => {
     async function fetchUserData() {
@@ -19,9 +18,10 @@ const ContactMe: React.FC = () => {
 
   if (!userData) return <div>Loading...</div>;
 
-  // Safely access the nested summary text from the structured text object
   const summaryText =
-    (userData.summary as any)?.value?.document?.children?.[0]?.children?.[0]?.value || '';
+    typeof userData.summary === 'string'
+      ? userData.summary
+      : userData.summary?.value?.document?.children?.[0]?.children?.[0]?.value || '';
 
   return (
     <div className="contact-container">

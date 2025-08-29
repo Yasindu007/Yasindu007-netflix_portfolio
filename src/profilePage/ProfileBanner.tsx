@@ -16,7 +16,7 @@ const ProfileBanner: React.FC = () => {
         const data = await getProfileBanner();
         setBannerData(data);
       } catch (err) {
-        console.error("Failed to fetch profile banner:", err);
+        console.error('Failed to fetch profile banner:', err);
         setError("Sorry, we couldn't load the profile information.");
       } finally {
         setLoading(false);
@@ -30,9 +30,10 @@ const ProfileBanner: React.FC = () => {
   if (!bannerData) return <div className="profile-banner-loading">No data available.</div>;
 
   const handlePlayClick = async () => {
-    const url = typeof bannerData.resumeLink === 'string'
-      ? bannerData.resumeLink
-      : bannerData.resumeLink?.url;
+    const url =
+      typeof bannerData.resumeLink === 'string'
+        ? bannerData.resumeLink
+        : bannerData.resumeLink?.url;
 
     if (url) {
       // First, open the resume in a new tab. This is the primary action.
@@ -64,7 +65,10 @@ const ProfileBanner: React.FC = () => {
     }
   };
 
-  const summaryText = (bannerData.profileSummary?.value as any)?.document?.children?.[0]?.children?.[0]?.value;
+  const summaryText =
+    typeof bannerData.profileSummary === 'string'
+      ? bannerData.profileSummary
+      : bannerData.profileSummary?.value?.document?.children?.[0]?.children?.[0]?.value;
 
   return (
     <div className="profile-banner">
@@ -72,9 +76,7 @@ const ProfileBanner: React.FC = () => {
         <h1 className="banner-headline" id="headline">
           {bannerData.headline}
         </h1>
-        <p className="banner-description">
-          {summaryText || 'No summary available.'}
-        </p>
+        <p className="banner-description">{summaryText || 'No summary available.'}</p>
         <div className="banner-buttons">
           <PlayButton onClick={handlePlayClick} label="Resume" />
           <MoreInfoButton onClick={handleLinkedinClick} label="LinkedIn" />

@@ -10,29 +10,37 @@ interface ContinueWatchingProps {
 
 const continueWatchingConfig = {
   recruiter: [
-    { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
-    { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    { title: "Blogs", imgSrc: "https://picsum.photos/id/1027/300/200", link: "/blogs" },
-    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
+    { title: 'Music', imgSrc: 'https://picsum.photos/id/1025/300/200', link: '/music' },
+    { title: 'Reading', imgSrc: 'https://picsum.photos/id/1026/300/200', link: '/reading' },
+    { title: 'Blogs', imgSrc: 'https://picsum.photos/id/1027/300/200', link: '/blogs' },
+    { title: 'Contact Me', imgSrc: 'https://picsum.photos/id/1029/300/200', link: '/contact-me' },
   ],
   developer: [
-    { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
-    { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    { title: "Blogs", imgSrc: "https://picsum.photos/id/1027/300/200", link: "/blogs" },
-    { title: "Certifications", imgSrc: "https://picsum.photos/id/1028/300/200", link: "/certifications" },
-    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
+    { title: 'Music', imgSrc: 'https://picsum.photos/id/1025/300/200', link: '/music' },
+    { title: 'Reading', imgSrc: 'https://picsum.photos/id/1026/300/200', link: '/reading' },
+    { title: 'Blogs', imgSrc: 'https://picsum.photos/id/1027/300/200', link: '/blogs' },
+    {
+      title: 'Certifications',
+      imgSrc: 'https://picsum.photos/id/1028/300/200',
+      link: '/certifications',
+    },
+    { title: 'Contact Me', imgSrc: 'https://picsum.photos/id/1029/300/200', link: '/contact-me' },
   ],
   stalker: [
-    { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    { title: "Blogs", imgSrc: "https://picsum.photos/id/1027/300/200", link: "/blogs" },
-    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
+    { title: 'Reading', imgSrc: 'https://picsum.photos/id/1026/300/200', link: '/reading' },
+    { title: 'Blogs', imgSrc: 'https://picsum.photos/id/1027/300/200', link: '/blogs' },
+    { title: 'Contact Me', imgSrc: 'https://picsum.photos/id/1029/300/200', link: '/contact-me' },
   ],
   adventure: [
-    { title: "Music", imgSrc: "https://picsum.photos/id/1025/300/200", link: "/music" },
-    { title: "Reading", imgSrc: "https://picsum.photos/id/1026/300/200", link: "/reading" },
-    { title: "Certifications", imgSrc: "https://picsum.photos/id/1028/300/200", link: "/certifications" },
-    { title: "Contact Me", imgSrc: "https://picsum.photos/id/1029/300/200", link: "/contact-me" }
-  ]
+    { title: 'Music', imgSrc: 'https://picsum.photos/id/1025/300/200', link: '/music' },
+    { title: 'Reading', imgSrc: 'https://picsum.photos/id/1026/300/200', link: '/reading' },
+    {
+      title: 'Certifications',
+      imgSrc: 'https://picsum.photos/id/1028/300/200',
+      link: '/certifications',
+    },
+    { title: 'Contact Me', imgSrc: 'https://picsum.photos/id/1029/300/200', link: '/contact-me' },
+  ],
 };
 
 const ContinueWatching: React.FC<ContinueWatchingProps> = ({ profile }) => {
@@ -42,8 +50,8 @@ const ContinueWatching: React.FC<ContinueWatchingProps> = ({ profile }) => {
     <div className="continue-watching-row">
       <h2 className="row-title">Continue Watching for {profile}</h2>
       <div className="card-row">
-        {continueWatching.map((pick, index) => (
-          <Link to={pick.link} key={index} className="pick-card">
+        {continueWatching.map((pick) => (
+          <Link to={pick.link} key={pick.title} className="pick-card">
             <img src={pick.imgSrc} alt={pick.title} className="pick-image" />
             <div className="overlay">
               <div className="pick-label">{pick.title}</div>
