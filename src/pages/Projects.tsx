@@ -114,14 +114,25 @@ const Projects: React.FC = () => {
             'No description available.';
 
       return (
-        <div
+        <a
           key={project.title + (project.image?.url || index)}
+          href={project.githubLink || '#'}
+          target="_blank"
+          rel="noopener noreferrer"
           className="project-card"
           style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
+          title={project.githubLink ? 'View on GitHub' : 'No GitHub link available'}
         >
           <img src={project.image.url} alt={project.title} className="project-image" />
           <div className="project-details">
-            <h3>{project.title}</h3>
+            <div className="project-header">
+              <h3>{project.title}</h3>
+              {project.githubLink && (
+                <div className="github-link">
+                  <FaGithub />
+                </div>
+              )}
+            </div>
             <p>{descriptionText}</p>
             <div className="tech-used">
               {project.techUsed.split(', ').map((tech, i) => (
@@ -131,7 +142,7 @@ const Projects: React.FC = () => {
               ))}
             </div>
           </div>
-        </div>
+        </a>
       );
     });
   }, [projects]);

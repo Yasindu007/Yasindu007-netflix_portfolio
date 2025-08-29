@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ContactMe.css';
-import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
 import { getContactMe } from '../queries/getContactMe';
 
@@ -32,14 +32,30 @@ const ContactMe: React.FC = () => {
           <p className="badge-title">{userData.title}</p>
           <p className="badge-description">{summaryText}</p>
           <p className="badge-company">{userData.companyUniversity}</p>
-          <a
-            href={userData.linkedinLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="badge-link"
-          >
-            <FaLinkedin className="linkedin-icon" /> View Profile
-          </a>
+          <div className="badge-links">
+            {userData.linkedinLink && (
+              <a
+                href={userData.linkedinLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="badge-link"
+                title="View LinkedIn Profile"
+              >
+                <FaLinkedin className="linkedin-icon" /> View Profile
+              </a>
+            )}
+            {userData.githubLink && (
+              <a
+                href={userData.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="badge-link"
+                title="View GitHub Profile"
+              >
+                <FaGithub className="github-icon" /> View GitHub
+              </a>
+            )}
+          </div>
         </div>
       </div>
       <div className="contact-header">

@@ -17,6 +17,7 @@ const GET_CONTACT_ME = `
       linkedinLink
       email
       phoneNumber
+      githubLink
     }
   }
 `;

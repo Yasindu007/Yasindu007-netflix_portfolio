@@ -37,12 +37,12 @@ const topPicksConfig = {
       icon: <FaCertificate />,
       route: '/certifications',
     },
-    {
-      title: 'Recommendations',
-      imgSrc: 'https://picsum.photos/seed/recommendations/250/200',
-      icon: <FaHandsHelping />,
-      route: '/recommendations',
-    },
+    // {
+    //   title: 'Recommendations',
+    //   imgSrc: 'https://picsum.photos/seed/recommendations/250/200',
+    //   icon: <FaHandsHelping />,
+    //   route: '/recommendations',
+    // },
     {
       title: 'Projects',
       imgSrc: 'https://picsum.photos/seed/projects/250/200',

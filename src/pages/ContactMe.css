@@ -59,21 +59,37 @@
 .badge-link {
   display: inline-flex;
   align-items: center;
-  background-color: #0077b5;
   color: #fff;
   padding: 8px 12px;
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
   margin-top: 10px;
-  transition: background-color 0.3s ease;
+  margin-right: 10px;
+  transition: all 0.3s ease;
 }
 
-.badge-link:hover {
-  background-color: #005983;
+.badge-link:first-of-type {
+  background-color: #333;
+}
+
+.badge-link:first-of-type:hover {
+  background-color: #555;
+}
+
+.badge-link:last-of-type {
+  background-color: #333;
+}
+
+.badge-link:last-of-type:hover {
+  background-color: #555;
 }
 
 .linkedin-icon {
+  margin-right: 5px;
+}
+
+.github-icon {
   margin-right: 5px;
 }
 

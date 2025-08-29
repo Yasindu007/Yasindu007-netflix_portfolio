@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Certifications.css';
-import { FaExternalLinkAlt, FaUniversity } from 'react-icons/fa';
+import { FaUniversity } from 'react-icons/fa';
 import { SiUdemy, SiCoursera, SiIeee, SiLinkedin } from 'react-icons/si';
 import { Certification } from '../types';
 import { getCertifications } from '../queries/getCertifications';
@@ -46,9 +46,7 @@ const Certifications: React.FC = () => {
               <p>{cert.issuer}</p>
               {cert.issuedDate && <span className="issued-date">Issued {cert.issuedDate}</span>}
             </div>
-            <div className="certification-link animated-icon">
-              <FaExternalLinkAlt />
-            </div>
+            <div className="certification-link animated-icon"></div>
           </a>
         ))}
       </div>

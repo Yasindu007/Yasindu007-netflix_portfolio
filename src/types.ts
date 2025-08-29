@@ -1,11 +1,22 @@
 // types.ts
 
+export interface StructuredText {
+  value: {
+    document: {
+      children: {
+        type: string;
+        children: { value: string }[];
+      }[];
+    };
+  };
+}
+
 export interface ProfileBanner {
   backgroundImage: { url: string };
   headline: string;
   resumeLink: { url: string };
   linkedinLink: string;
-  profileSummary: { value: string };
+  profileSummary: StructuredText | string;
 }
 
 export interface TimelineItem {
@@ -21,6 +32,8 @@ export interface Project {
   title: string;
   description: string;
   techUsed: string;
+  githubLink: string;
+
   image: { url: string };
 }
 
@@ -36,11 +49,12 @@ export interface ContactMe {
   profilePicture: { url: string };
   name: string;
   title: string;
-  summary: string;
+  summary: StructuredText | string;
   companyUniversity: string;
   linkedinLink: string;
   email: string;
   phoneNumber: string;
+  githubLink: string;
 }
 
 export interface Skill {
