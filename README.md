@@ -3,7 +3,7 @@
 A dynamic, fully-responsive developer portfolio designed to mimic the Netflix UI. This project is built with React and TypeScript, and all content is managed through the DatoCMS headless CMS, allowing for easy updates without touching the code.
 
 <!-- It's highly recommended to replace this with a screenshot of your project! -->
-![Project Screenshot](https://via.placeholder.com/800x400.png?text=Your+Portfolio+Screenshot)
+![Project Screenshot](src/images/Screenshot.png)
 
 ## ✨ Features
 
