@@ -1,5 +1,8 @@
 {
-  "extends": ["react-app", "react-app/jest", "prettier"],
+  "extends": [
+    "react-app",
+    "react-app/jest",
+    "plugin:prettier/recommended"],
   "rules": {
     "@typescript-eslint/no-explicit-any": "warn",
     "no-console": ["warn", { "allow": ["error", "warn"] }]
