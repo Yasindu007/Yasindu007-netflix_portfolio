@@ -1,0 +1,18 @@
+{
+  // Enable format on save
+  "editor.formatOnSave": true,
+
+  // Use the Prettier extension as the default formatter for these languages
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Run ESLint's --fix command on save
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  }
+}
