@@ -56,7 +56,7 @@ const Browse: React.FC = () => {
     <div className="browse-container">
       <p className="who-is-watching">Who's Watching?</p>
       <div className="profiles">
-        {profiles.map(profile => (
+        {profiles.map((profile) => (
           <ProfileCard
             key={profile.name}
             name={profile.name}
