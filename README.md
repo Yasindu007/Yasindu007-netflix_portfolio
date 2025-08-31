@@ -84,8 +84,7 @@ This project requires a DatoCMS backend to function.
     yarn start
     # or
     npm start
-    `
-    The application should now be running on `http://localhost:3000`.
+    `The application should now be running on`http://localhost:3000`.
 
 ### Useful Scripts
 
@@ -176,6 +175,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📬 Contact
 
-Your Name - @your_twitter - your.email@example.com
+Your Name - @your_twitter - malithdesilva64@gmail.com
 
-Project Link: https://github.com/your-username/netflix-portfolio
+Project Link: https://github.com/Yasindu007/Yasindu007-netflix_portfolio
