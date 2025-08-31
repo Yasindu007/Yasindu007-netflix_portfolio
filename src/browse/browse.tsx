@@ -7,10 +7,16 @@ import redImage from '../images/red.png';
 import yellowImage from '../images/yellow.png';
 import './browse.css';
 
+interface Profile {
+  name: string;
+  image: string;
+  backgroundGif: string;
+}
+
 const Browse: React.FC = () => {
   const navigate = useNavigate();
 
-  const profiles = [
+  const profiles: Profile[] = [
     {
       name: 'recruiter',
       image: blueImage,
@@ -37,11 +43,7 @@ const Browse: React.FC = () => {
     },
   ];
 
-  const handleProfileClick = (profile: {
-    name: string;
-    image: string;
-    backgroundGif: string;
-  }) => {
+  const handleProfileClick = (profile: Profile) => {
     navigate(`/profile/${profile.name}`, {
       state: {
         profileImage: profile.image,
@@ -54,9 +56,9 @@ const Browse: React.FC = () => {
     <div className="browse-container">
       <p className="who-is-watching">Who's Watching?</p>
       <div className="profiles">
-        {profiles.map((profile, index) => (
+        {profiles.map(profile => (
           <ProfileCard
-            key={index}
+            key={profile.name}
             name={profile.name}
             image={profile.image}
             onClick={() => handleProfileClick(profile)}
