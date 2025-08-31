@@ -12,7 +12,8 @@ const books = [
     title: 'Atomic Habits',
     author: 'James Clear',
     imgSrc: atomicHabits,
-    description: 'A practical guide to building good habits and breaking bad ones.',
+    description:
+      'A practical guide to building good habits and breaking bad ones.',
   },
   {
     title: 'Rich Dad Poor Dad',
@@ -51,7 +52,8 @@ const Reading: React.FC = () => {
     <div className="reading-container">
       <h2 className="reading-title">📚 Books That Shaped My Journey</h2>
       <p className="reading-intro">
-        These books have influenced my perspectives, motivation, and self-growth.
+        These books have influenced my perspectives, motivation, and
+        self-growth.
       </p>
       <div className="books-grid">
         {books.map((book, index) => (

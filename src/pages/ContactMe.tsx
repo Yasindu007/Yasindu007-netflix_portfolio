@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './ContactMe.css';
-import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin, FaGithub } from 'react-icons/fa';
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaCoffee,
+  FaLinkedin,
+  FaGithub,
+} from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
 import { getContactMe } from '../queries/getContactMe';
 
@@ -21,12 +27,17 @@ const ContactMe: React.FC = () => {
   const summaryText =
     typeof userData.summary === 'string'
       ? userData.summary
-      : userData.summary?.value?.document?.children?.[0]?.children?.[0]?.value || '';
+      : userData.summary?.value?.document?.children?.[0]?.children?.[0]
+          ?.value || '';
 
   return (
     <div className="contact-container">
       <div className="linkedin-badge-custom">
-        <img src={userData.profilePicture.url} alt={userData.name} className="badge-avatar" />
+        <img
+          src={userData.profilePicture.url}
+          alt={userData.name}
+          className="badge-avatar"
+        />
         <div className="badge-content">
           <h3 className="badge-name">{userData?.name}</h3>
           <p className="badge-title">{userData.title}</p>

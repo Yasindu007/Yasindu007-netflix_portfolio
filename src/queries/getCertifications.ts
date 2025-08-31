@@ -15,8 +15,8 @@ const GET_CERTIFICATIONS = `
 `;
 
 export async function getCertifications(): Promise<Certification[]> {
-  const data = await datoCMSClient.request<{ allCertifications: Certification[] }>(
-    GET_CERTIFICATIONS,
-  );
+  const data = await datoCMSClient.request<{
+    allCertifications: Certification[];
+  }>(GET_CERTIFICATIONS);
   return data.allCertifications;
 }

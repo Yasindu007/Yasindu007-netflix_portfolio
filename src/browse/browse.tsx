@@ -37,9 +37,16 @@ const Browse: React.FC = () => {
     },
   ];
 
-  const handleProfileClick = (profile: { name: string; image: string; backgroundGif: string }) => {
+  const handleProfileClick = (profile: {
+    name: string;
+    image: string;
+    backgroundGif: string;
+  }) => {
     navigate(`/profile/${profile.name}`, {
-      state: { profileImage: profile.image, backgroundGif: profile.backgroundGif },
+      state: {
+        profileImage: profile.image,
+        backgroundGif: profile.backgroundGif,
+      },
     });
   };
 

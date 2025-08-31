@@ -8,21 +8,24 @@ const blogs = [
     platform: 'Medium',
     icon: <FaMedium />,
     link: '',
-    description: 'Learn tips to customize your Rails console for a better experience.',
+    description:
+      'Learn tips to customize your Rails console for a better experience.',
   },
   {
     title: 'Docker Fundas - My Version',
     platform: 'Medium',
     icon: <FaMedium />,
     link: '',
-    description: 'An introductory guide to Docker fundamentals from my perspective.',
+    description:
+      'An introductory guide to Docker fundamentals from my perspective.',
   },
   {
     title: 'Grape Gem in Ruby on Rails: Handling User Model and API Endpoint',
     platform: 'Dev.to',
     icon: <FaDev />,
     link: '',
-    description: 'A guide to using the Grape gem for API development in Ruby on Rails.',
+    description:
+      'A guide to using the Grape gem for API development in Ruby on Rails.',
   },
 ];
 

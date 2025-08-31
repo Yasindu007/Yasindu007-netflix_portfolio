@@ -27,7 +27,8 @@ const ProfileBanner: React.FC = () => {
 
   if (loading) return <div className="profile-banner-loading">Loading...</div>;
   if (error) return <div className="profile-banner-error">{error}</div>;
-  if (!bannerData) return <div className="profile-banner-loading">No data available.</div>;
+  if (!bannerData)
+    return <div className="profile-banner-loading">No data available.</div>;
 
   const handlePlayClick = async () => {
     const url =
@@ -54,7 +55,10 @@ const ProfileBanner: React.FC = () => {
       } catch (error) {
         // The download might fail (e.g., CORS), but the tab is already open.
         // We can just log a warning as the primary action has already succeeded.
-        console.warn('Resume auto-download failed, but it was opened in a new tab.', error);
+        console.warn(
+          'Resume auto-download failed, but it was opened in a new tab.',
+          error,
+        );
       }
     }
   };
@@ -68,7 +72,8 @@ const ProfileBanner: React.FC = () => {
   const summaryText =
     typeof bannerData.profileSummary === 'string'
       ? bannerData.profileSummary
-      : bannerData.profileSummary?.value?.document?.children?.[0]?.children?.[0]?.value;
+      : bannerData.profileSummary?.value?.document?.children?.[0]?.children?.[0]
+          ?.value;
 
   return (
     <div className="profile-banner">
@@ -76,7 +81,9 @@ const ProfileBanner: React.FC = () => {
         <h1 className="banner-headline" id="headline">
           {bannerData.headline}
         </h1>
-        <p className="banner-description">{summaryText || 'No summary available.'}</p>
+        <p className="banner-description">
+          {summaryText || 'No summary available.'}
+        </p>
         <div className="banner-buttons">
           <PlayButton onClick={handlePlayClick} label="Resume" />
           <MoreInfoButton onClick={handleLinkedinClick} label="LinkedIn" />
