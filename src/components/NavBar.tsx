@@ -6,7 +6,7 @@ import {
   FaTools,
   FaProjectDiagram,
   FaEnvelope,
-} from 'react-icons/fa';
+} from 'react-icons/fa'; // Import icons
 import './Navbar.css';
 import netflixLogo from '../images/logo-2.png';
 import blueImage from '../images/blue.png';
@@ -75,6 +75,7 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <div className="navbar-right">
+          {/* Hamburger menu for mobile */}
           <div className="hamburger" onClick={toggleSidebar}>
             <div></div>
             <div></div>
@@ -91,11 +92,13 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
+      {/* Sidebar Overlay */}
       <div
         className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`}
         onClick={closeSidebar}
       ></div>
 
+      {/* Sidebar (only visible on mobile) */}
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="sidebar-logo">
           <img src={netflixLogo} alt="Netflix Logo" />
