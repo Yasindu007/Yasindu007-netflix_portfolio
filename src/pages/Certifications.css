@@ -7,7 +7,11 @@
   min-height: 100vh;
   padding: 10rem 1rem;
   text-align: center;
-  background: linear-gradient(180deg, rgba(0, 0, 1, 0.9) 10%, rgba(20, 20, 20, 0.9) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 1, 0.9) 10%,
+    rgba(20, 20, 20, 0.9) 100%
+  );
   background-size: 200% 200%;
   color: #fff;
   animation: backgroundShift 10s ease-in-out infinite;

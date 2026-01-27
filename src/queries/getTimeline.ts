@@ -16,6 +16,8 @@ const GET_TIMELINE = `
 `;
 
 export async function getTimeline(): Promise<TimelineItem[]> {
-  const data = await datoCMSClient.request<{ allTimelines: TimelineItem[] }>(GET_TIMELINE);
+  const data = await datoCMSClient.request<{ allTimelines: TimelineItem[] }>(
+    GET_TIMELINE,
+  );
   return data.allTimelines;
 }

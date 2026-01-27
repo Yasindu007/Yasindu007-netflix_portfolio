@@ -110,8 +110,8 @@ const Projects: React.FC = () => {
       const descriptionText =
         typeof project.description === 'string'
           ? project.description
-          : project.description?.value?.document?.children?.[0]?.children?.[0]?.value ||
-            'No description available.';
+          : project.description?.value?.document?.children?.[0]?.children?.[0]
+              ?.value || 'No description available.';
 
       return (
         <a
@@ -121,9 +121,15 @@ const Projects: React.FC = () => {
           rel="noopener noreferrer"
           className="project-card"
           style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
-          title={project.githubLink ? 'View on GitHub' : 'No GitHub link available'}
+          title={
+            project.githubLink ? 'View on GitHub' : 'No GitHub link available'
+          }
         >
-          <img src={project.image.url} alt={project.title} className="project-image" />
+          <img
+            src={project.image.url}
+            alt={project.title}
+            className="project-image"
+          />
           <div className="project-details">
             <div className="project-header">
               <h3>{project.title}</h3>

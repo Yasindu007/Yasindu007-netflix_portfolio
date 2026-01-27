@@ -44,7 +44,9 @@ const Certifications: React.FC = () => {
               </div>
               <h3>{cert.title}</h3>
               <p>{cert.issuer}</p>
-              {cert.issuedDate && <span className="issued-date">Issued {cert.issuedDate}</span>}
+              {cert.issuedDate && (
+                <span className="issued-date">Issued {cert.issuedDate}</span>
+              )}
             </div>
             <div className="certification-link animated-icon"></div>
           </a>

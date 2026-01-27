@@ -10,15 +10,21 @@ type ProfileType = 'recruiter' | 'developer' | 'stalker' | 'adventure';
 const ProfilePage: React.FC = () => {
   const location = useLocation();
   const backgroundGif =
-    location.state?.backgroundGif || 'https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif';
+    location.state?.backgroundGif ||
+    'https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif';
   const { profileName } = useParams<{ profileName: string }>();
 
-  const profile = ['recruiter', 'developer', 'stalker', 'adventure'].includes(profileName!)
+  const profile = ['recruiter', 'developer', 'stalker', 'adventure'].includes(
+    profileName!,
+  )
     ? (profileName as ProfileType)
     : 'recruiter';
   return (
     <>
-      <div className="profile-page" style={{ backgroundImage: `url(${backgroundGif})` }}>
+      <div
+        className="profile-page"
+        style={{ backgroundImage: `url(${backgroundGif})` }}
+      >
         <ProfileBanner />
       </div>
       <TopPicksRow profile={profile} />

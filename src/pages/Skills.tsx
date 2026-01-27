@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react';
 import './Skills.css';
 import { getSkills } from '../queries/getSkills';
 
-import { FaReact, FaNodeJs, FaAws, FaDocker, FaJava, FaGitAlt } from 'react-icons/fa';
+import {
+  FaReact,
+  FaNodeJs,
+  FaAws,
+  FaDocker,
+  FaJava,
+  FaGitAlt,
+} from 'react-icons/fa';
 import {
   SiRubyonrails,
   SiTypescript,
@@ -93,7 +100,11 @@ const Skills: React.FC = () => {
                 <div className="icon">{iconMap[skill.icon] || <FaReact />}</div>
                 <h3 className="skill-name">
                   {skill.name.split('').map((letter: string, i: number) => (
-                    <span key={i} className="letter" style={{ animationDelay: `${i * 0.05}s` }}>
+                    <span
+                      key={i}
+                      className="letter"
+                      style={{ animationDelay: `${i * 0.05}s` }}
+                    >
                       {letter}
                     </span>
                   ))}
@@ -101,8 +112,8 @@ const Skills: React.FC = () => {
                 <p className="skill-description">
                   {typeof skill.description === 'string'
                     ? skill.description
-                    : skill.description?.value?.document?.children?.[0]?.children?.[0]?.value ||
-                      'No description available.'}
+                    : skill.description?.value?.document?.children?.[0]
+                        ?.children?.[0]?.value || 'No description available.'}
                 </p>
               </div>
             ))}
