@@ -1,10 +1,10 @@
 import React from 'react';
 import './Recommendations.css';
-import chrisProfilePic from '../images/chris.jpg'; // Adjust the path based on your directory structure
+import chrisProfilePic from '../images/chris.jpg';
 
 const Recommendations: React.FC = () => {
   return (
-    <div className='timeline-container'>
+    <div className="timeline-container">
       <div className="recommendation-card">
         <div className="recommendation-header">
           <img src={chrisProfilePic} alt="Ms. Tharushi Perera" className="profile-pic" />

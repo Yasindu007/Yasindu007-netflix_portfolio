@@ -9,7 +9,9 @@ const getClient = (): GraphQLClient => {
     const token = process.env.REACT_APP_DATO_CMS_API_TOKEN;
 
     if (!token) {
-      throw new Error('DatoCMS API token is missing. Make sure it is set in your .env file and prefixed with REACT_APP_.');
+      throw new Error(
+        'DatoCMS API token is missing. Make sure it is set in your .env file and prefixed with REACT_APP_.',
+      );
     }
 
     client = new GraphQLClient(DATO_CMS_ENDPOINT, {

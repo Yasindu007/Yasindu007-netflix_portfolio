@@ -14,7 +14,7 @@
 }
 
 .profile-banner::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -41,7 +41,7 @@
 .banner-description {
   font-size: 1rem;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .banner-buttons {
@@ -108,4 +108,3 @@
     font-size: 0.9rem;
   }
 }
-

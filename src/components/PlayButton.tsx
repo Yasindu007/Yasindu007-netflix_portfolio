@@ -6,7 +6,7 @@ interface PlayButtonProps {
   label?: string;
 }
 
-const PlayButton: React.FC<PlayButtonProps> = ({ onClick, label = "Play" }) => {
+const PlayButton: React.FC<PlayButtonProps> = ({ onClick, label = 'Play' }) => {
   return (
     <button className="play-button" onClick={onClick} type="button">
       <div className="icon-container">

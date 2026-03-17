@@ -9,7 +9,11 @@
   position: fixed;
   width: 100%;
   top: 0;
-  background-image: linear-gradient(180deg, rgb(0 0 1 / 90%) 10%, transparent 100%);
+  background-image: linear-gradient(
+    180deg,
+    rgb(0 0 1 / 90%) 10%,
+    transparent 100%
+  );
   padding: 20px;
   z-index: 3;
   transition: background-color 0.3s ease;
@@ -19,7 +23,8 @@
   background-color: #141414; /* Netflix black when scrolled */
 }
 
-.navbar-left, .navbar-right {
+.navbar-left,
+.navbar-right {
   display: flex;
   align-items: center;
 }
@@ -78,7 +83,6 @@
     width: 24px;
     height: 24px;
   }
-
 
   /* Hide Navbar Links in Mobile */
   .navbar-links {
@@ -153,7 +157,7 @@
     align-items: center;
     gap: 10px;
   }
-  
+
   .sidebar ul li a {
     color: #fff;
     text-decoration: none;

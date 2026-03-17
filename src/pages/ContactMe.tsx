@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './ContactMe.css';
-import { FaEnvelope, FaPhoneAlt, FaCoffee, FaLinkedin } from 'react-icons/fa';
+import {
+  FaEnvelope,
+  FaPhoneAlt,
+  FaCoffee,
+  FaLinkedin,
+  FaGithub,
+} from 'react-icons/fa';
 import { ContactMe as IContactMe } from '../types';
 import { getContactMe } from '../queries/getContactMe';
 
 const ContactMe: React.FC = () => {
-
-  const [userData, setUserData] = useState<IContactMe>()
+  const [userData, setUserData] = useState<IContactMe>();
 
   useEffect(() => {
     async function fetchUserData() {
@@ -19,27 +24,49 @@ const ContactMe: React.FC = () => {
 
   if (!userData) return <div>Loading...</div>;
 
-  // Safely access the nested summary text from the structured text object
   const summaryText =
-    (userData.summary as any)?.value?.document?.children?.[0]?.children?.[0]?.value || '';
+    typeof userData.summary === 'string'
+      ? userData.summary
+      : userData.summary?.value?.document?.children?.[0]?.children?.[0]
+          ?.value || '';
 
   return (
     <div className="contact-container">
       <div className="linkedin-badge-custom">
-        <img src={userData.profilePicture.url} alt={userData.name} className="badge-avatar" />
+        <img
+          src={userData.profilePicture.url}
+          alt={userData.name}
+          className="badge-avatar"
+        />
         <div className="badge-content">
           <h3 className="badge-name">{userData?.name}</h3>
           <p className="badge-title">{userData.title}</p>
           <p className="badge-description">{summaryText}</p>
           <p className="badge-company">{userData.companyUniversity}</p>
-          <a
-            href={userData.linkedinLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="badge-link"
-          >
-            <FaLinkedin className="linkedin-icon" /> View Profile
-          </a>
+          <div className="badge-links">
+            {userData.linkedinLink && (
+              <a
+                href={userData.linkedinLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="badge-link"
+                title="View LinkedIn Profile"
+              >
+                <FaLinkedin className="linkedin-icon" /> View Profile
+              </a>
+            )}
+            {userData.githubLink && (
+              <a
+                href={userData.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="badge-link"
+                title="View GitHub Profile"
+              >
+                <FaGithub className="github-icon" /> View GitHub
+              </a>
+            )}
+          </div>
         </div>
       </div>
       <div className="contact-header">

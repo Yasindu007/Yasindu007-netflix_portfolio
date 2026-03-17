@@ -10,7 +10,7 @@ const NetflixTitle = () => {
 
   const handlePlaySound = () => {
     const audio = new Audio(netflixSound);
-    audio.play().catch(error => console.error("Audio play error:", error));
+    audio.play().catch((error) => console.error('Audio play error:', error));
     setIsClicked(true); // Starts animation after clicking
   };
 
@@ -25,10 +25,10 @@ const NetflixTitle = () => {
 
   return (
     <div className="netflix-container" onClick={handlePlaySound}>
-      <img 
-        src={logoImage} 
-        alt="Custom Logo" 
-        className={`netflix-logo ${isClicked ? 'animate' : ''}`} 
+      <img
+        src={logoImage}
+        alt="Custom Logo"
+        className={`netflix-logo ${isClicked ? 'animate' : ''}`}
       />
     </div>
   );

@@ -13,11 +13,14 @@ const GET_PROJECTS = `
       image {
         url
       }
+      githubLink
     }
   }
 `;
 
 export async function getProjects(): Promise<Project[]> {
-  const data = await datoCMSClient.request<{ allProjects: Project[] }>(GET_PROJECTS);
+  const data = await datoCMSClient.request<{ allProjects: Project[] }>(
+    GET_PROJECTS,
+  );
   return data.allProjects;
 }
