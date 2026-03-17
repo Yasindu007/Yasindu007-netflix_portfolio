@@ -7,18 +7,18 @@ const Recommendations: React.FC = () => {
     <div className='timeline-container'>
       <div className="recommendation-card">
         <div className="recommendation-header">
-          <img src={chrisProfilePic} alt="Chris Smith" className="profile-pic" />
+          <img src={chrisProfilePic} alt="Ms. Tharushi Perera" className="profile-pic" />
           <div>
-            <h3>Chris Smith</h3>
-            <p>Head of Kajima Community</p>
-            <p className="date">October 24, 2024</p>
+            <h3>Tharushi Perera</h3>
+            <p>Lecturer – Machine Learning & Data Mining</p>
+            <p className="date">March 2026</p>
           </div>
         </div>
         <div className="recommendation-body">
-          <p>✨ "It is with great pleasure that I write this reference for Malith, who worked for us as a software developer at Kajima from June 2023. Unfortunately, due to a change in the company’s structure, we have made the difficult decision to make their position redundant. This in no way reflects on their performance, which was consistently excellent.</p>
-          <p>During their time with us, MAlith demonstrated strong technical expertise, a passion for problem-solving, a willingness to learn, and a collaborative spirit that greatly contributed to our team’s success. They played a pivotal role in developing and maintaining key features of our software <strong>BookingsPlus</strong> and <strong>NHS Open Space</strong>, consistently delivering high-quality code while meeting project deadlines. Their ability to quickly adapt to new technologies and their proactive approach to finding innovative solutions set them apart."</p>
-          <p>💼 "Malith also showed exceptional teamwork and communication skills, effectively collaborating with cross-functional teams, including product managers, designers, and QA. Their professionalism, positive attitude, and dedication to their work made them an asset to the team."</p>
-          <p>🌟 "I have no doubt that Malith will be a valuable addition to any organization, and I wholeheartedly recommend them for any future opportunities."</p>
+          <p>✨ "It is my pleasure to recommend Yasindu De Silva, a highly motivated and talented student currently pursuing Software Development at IIT Sri Lanka. I have had the opportunity to work with Yasindu during the Machine Learning and Data Mining module, where he consistently demonstrated strong analytical thinking and technical capability."</p>
+          <p>"Yasindu has shown great enthusiasm for modern technologies, including full-stack development, cloud computing, and API design. He has hands-on experience with React, Node.js, and AWS, and has successfully built and deployed real-world applications. His ability to quickly learn new technologies—such as Golang for backend development—sets him apart from his peers."</p>
+          <p>💼 "Beyond technical skills, Yasindu is a proactive learner and an excellent team player. He communicates effectively, takes initiative in projects, and consistently strives to improve his work. His dedication and problem-solving mindset make him a valuable contributor in any development environment."</p>
+          <p>🌟 "I strongly believe Yasindu has the potential to excel as a Software Engineer, and I confidently recommend him for internships and future professional opportunities."</p>
         </div>
       </div>
     </div>
