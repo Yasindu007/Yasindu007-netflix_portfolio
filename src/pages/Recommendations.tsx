@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import './Recommendations.css';
 import chrisProfilePic from '../images/chris.jpg';
 
