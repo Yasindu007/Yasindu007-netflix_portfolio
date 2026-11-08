@@ -1,8 +1,16 @@
 import React from 'react';
 import './Blogs.css';
-import { FaMedium, FaDev } from 'react-icons/fa';
+import { FaMedium } from 'react-icons/fa';
 
 const blogs = [
+  {
+    title: 'The Small Task That Took Four Months',
+    platform: 'Medium',
+    icon: <FaMedium />,
+    link: 'https://medium.com/@malithdesilva64/the-small-task-that-took-four-months-e21309adbda3',
+    description:
+      'A reflection on how a seemingly small task turned into a four-month journey, and what it taught me.',
+  },
   {
     title: 'Make Your Rails Console Look Better',
     platform: 'Medium',
@@ -18,14 +26,6 @@ const blogs = [
     link: '',
     description:
       'An introductory guide to Docker fundamentals from my perspective.',
-  },
-  {
-    title: 'Grape Gem in Ruby on Rails: Handling User Model and API Endpoint',
-    platform: 'Dev.to',
-    icon: <FaDev />,
-    link: '',
-    description:
-      'A guide to using the Grape gem for API development in Ruby on Rails.',
   },
 ];
 

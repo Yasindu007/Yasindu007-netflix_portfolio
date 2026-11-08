@@ -18,7 +18,8 @@ const extractEndYear = (dateRange: string): number => {
     dateRange.toLowerCase().includes('present') ||
     dateRange.toLowerCase().includes('current')
   ) {
-    return new Date().getFullYear();
+    // +1 so an ongoing role sorts above one that ended this year
+    return new Date().getFullYear() + 1;
   }
 
   // Extract the last year mentioned in the date range
@@ -62,37 +63,43 @@ const WorkExperience: React.FC = () => {
         </h2>
       </div>
       <VerticalTimeline>
-        {timeLineData.map((item, index) => (
-          <VerticalTimelineElement
-            key={index}
-            className={`vertical-timeline-element--${item.timelineType}`}
-            date={item.dateRange}
-            icon={item.timelineType === 'work' ? <WorkIcon /> : <SchoolIcon />}
-          >
-            {item.timelineType === 'work' ? (
-              <div>
-                <h3 className="vertical-timeline-element-title">
-                  {item.title}
-                </h3>
-                <h4 className="vertical-timeline-element-subtitle">
-                  {item.name}
-                </h4>
-                <p className="vertical-timeline-element-tech">
-                  🔧 {item.techStack}
-                </p>
-                <p>{item.summaryPoints}</p>
-              </div>
-            ) : (
-              <div>
-                <h3 className="vertical-timeline-element-title">{item.name}</h3>
-                <h4 className="vertical-timeline-element-subtitle">
-                  {item.title}
-                </h4>
-                <p>{item.summaryPoints}</p>
-              </div>
-            )}
-          </VerticalTimelineElement>
-        ))}
+        {timeLineData.map((item, index) => {
+          // CMS values are capitalised ("Work"), so compare case-insensitively
+          const type = item.timelineType?.toLowerCase();
+          return (
+            <VerticalTimelineElement
+              key={index}
+              className={`vertical-timeline-element--${type}`}
+              date={item.dateRange}
+              icon={type === 'work' ? <WorkIcon /> : <SchoolIcon />}
+            >
+              {type === 'work' ? (
+                <div>
+                  <h3 className="vertical-timeline-element-title">
+                    {item.title}
+                  </h3>
+                  <h4 className="vertical-timeline-element-subtitle">
+                    {item.name}
+                  </h4>
+                  <p className="vertical-timeline-element-tech">
+                    🔧 {item.techStack}
+                  </p>
+                  <p>{item.summaryPoints}</p>
+                </div>
+              ) : (
+                <div>
+                  <h3 className="vertical-timeline-element-title">
+                    {item.name}
+                  </h3>
+                  <h4 className="vertical-timeline-element-subtitle">
+                    {item.title}
+                  </h4>
+                  <p>{item.summaryPoints}</p>
+                </div>
+              )}
+            </VerticalTimelineElement>
+          );
+        })}
         <VerticalTimelineElement icon={<StarIcon />} />
       </VerticalTimeline>
     </>

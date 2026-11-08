@@ -20,7 +20,7 @@ export interface ProfileBanner {
 }
 
 export interface TimelineItem {
-  timelineType: 'work' | 'education';
+  timelineType: string; // "Work" / "Education" in the CMS
   name: string;
   title: string;
   techStack: string;

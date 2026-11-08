@@ -32,7 +32,13 @@ import {
   SiMongodb,
   SiPython,
   SiExpress,
+  SiMicrosoftazure,
+  SiTerraform,
+  SiHelm,
+  SiAzuredevops,
+  SiGnubash,
 } from 'react-icons/si';
+import { TbSql, TbChartLine } from 'react-icons/tb';
 import { Skill } from '../types';
 
 const iconMap: { [key: string]: JSX.Element } = {
@@ -63,6 +69,13 @@ const iconMap: { [key: string]: JSX.Element } = {
   go: <SiGo />,
   json: <SiJson />,
   mongodb: <SiMongodb />,
+  azure: <SiMicrosoftazure />,
+  terraform: <SiTerraform />,
+  helm: <SiHelm />,
+  'ci/cd': <SiAzuredevops />,
+  kql: <TbSql />,
+  monitoring: <TbChartLine />,
+  bash: <SiGnubash />,
 };
 
 const Skills: React.FC = () => {
