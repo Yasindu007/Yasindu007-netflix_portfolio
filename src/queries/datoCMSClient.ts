@@ -6,7 +6,7 @@ let client: GraphQLClient | null = null;
 
 const getClient = (): GraphQLClient => {
   if (!client) {
-    const token = process.env.REACT_APP_DATO_CMS_API_TOKEN;
+    const token = import.meta.env.REACT_APP_DATO_CMS_API_TOKEN;
 
     if (!token) {
       throw new Error(

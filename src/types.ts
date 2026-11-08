@@ -30,7 +30,7 @@ export interface TimelineItem {
 
 export interface Project {
   title: string;
-  description: string;
+  description: StructuredText | string;
   techUsed: string;
   githubLink: string;
 
@@ -60,6 +60,6 @@ export interface ContactMe {
 export interface Skill {
   name: string;
   category: string;
-  description: string;
+  description: StructuredText | string;
   icon: string;
 }

@@ -1,7 +1,24 @@
 {
-  "extends": ["react-app", "react-app/jest", "plugin:prettier/recommended"],
+  "root": true,
+  "env": { "browser": true, "es2022": true },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": { "ecmaVersion": "latest", "sourceType": "module" },
+  "settings": { "react": { "version": "detect" } },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "varsIgnorePattern": "^React$" }
+    ],
+    "react/no-unescaped-entities": "off",
     "no-console": ["warn", { "allow": ["error", "warn"] }]
   }
 }

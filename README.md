@@ -120,7 +120,7 @@ If hosting on a subpath (e.g., GitHub Pages), set `homepage` in `package.json`.
 2.  Go to Vercel and sign up using your Git provider.
 3.  Click "Add New..." → "Project".
 4.  Import your portfolio repository.
-5.  Vercel will automatically detect that it's a Create React App and configure the build settings for you.
+5.  Vercel will detect Vite. Set the **Output Directory** to `build` (this project builds there instead of Vite's default `dist`).
 6.  Before deploying, go to the "Environment Variables" section.
 7.  Add your DatoCMS API token:
     - **Key**: `REACT_APP_DATOCMS_API_TOKEN`
@@ -133,7 +133,7 @@ If hosting on a subpath (e.g., GitHub Pages), set `homepage` in `package.json`.
 2.  Go to Netlify and sign up using your Git provider.
 3.  Click "Add new site" → "Import an existing project".
 4.  Select your portfolio repository.
-5.  Netlify will detect it's a Create React App. Confirm the following settings:
+5.  Netlify will detect Vite. Confirm the following settings:
     - **Build command**: `npm run build` (or `yarn build`)
     - **Publish directory**: `build`
 6.  Click "Show advanced" → "Add environment variables".
