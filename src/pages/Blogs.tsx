@@ -7,7 +7,7 @@ const blogs = [
     title: 'The Small Task That Took Four Months',
     platform: 'Medium',
     icon: <FaMedium />,
-    link: 'https://medium.com/@malithdesilva64/the-small-task-that-took-four-months-e21309adbda3',
+    link: 'https://medium.com/@yasindudesilva/the-small-task-that-took-four-months-e21309adbda3',
     description:
       'A reflection on how a seemingly small task turned into a four-month journey, and what it taught me.',
   },
