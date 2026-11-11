@@ -4,7 +4,8 @@
 // crawlers that don't run JavaScript (most AI crawlers) used to see an empty page.
 // After `vite build`, this script:
 //   1. fetches the same DatoCMS content the app shows,
-//   2. writes build/<route>/index.html for every route, each with its own title,
+//   2. writes build/<route>.html for every route (Netlify serves /skills from
+//      skills.html with no redirect; skills/index.html would 301 to /skills/), each with its own title,
 //      description, canonical URL and the page's real text inside #root
 //      (React replaces it on load, so visitors see the normal app),
 //   3. writes build/sitemap.xml and build/llms.txt.
@@ -469,7 +470,7 @@ const list = pages(s);
 
 for (const p of list) {
   const file =
-    p.path === '/' ? join(OUT, 'index.html') : join(OUT, p.path, 'index.html');
+    p.path === '/' ? join(OUT, 'index.html') : join(OUT, `${p.path}.html`);
   mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, render(template, p));
 }
