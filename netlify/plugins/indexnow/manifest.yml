@@ -1,0 +1,6 @@
+name: indexnow
+inputs:
+  - name: host
+    required: true
+  - name: key
+    required: true

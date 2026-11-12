@@ -1,0 +1,10 @@
+# Build command and publish directory are set in the Netlify dashboard.
+# This file only registers the IndexNow plugin.
+
+[[plugins]]
+  package = "/netlify/plugins/indexnow"
+
+  [plugins.inputs]
+    host = "malith.is-a.dev"
+    # Public by design: IndexNow verifies it via /<key>.txt on the site.
+    key = "28f07abe3d353d85c950b3c937d621e4"
