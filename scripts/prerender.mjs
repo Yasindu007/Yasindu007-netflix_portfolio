@@ -28,7 +28,8 @@ const PERSON = {
   role: 'Site Reliability Engineer Intern at WSO2',
   tagline: 'Cloud, DevOps & Full-Stack Development',
   bio:
-    'Malith De Silva (also known as Yasindu De Silva) is a Site Reliability ' +
+    'Malith De Silva (full name Yasindu Malith De Silva, also known as ' +
+    'Yasindu De Silva) is a Site Reliability ' +
     'Engineer Intern at WSO2 and a Computer Science student at the University ' +
     'of Westminster, from Sri Lanka, working across cloud infrastructure ' +
     '(Azure, AWS, Kubernetes, Terraform), observability, CI/CD and full-stack ' +
